@@ -12,3 +12,5 @@ Auth::routes();
 Route::resource('home', App\Http\Controllers\HomeController::class)->middleware('auth');
 
 Route::resource('post', App\Http\Controllers\PostController::class)->middleware('auth');
+
+Route::get('/search', [App\Http\Controllers\PostController::class, 'search']);

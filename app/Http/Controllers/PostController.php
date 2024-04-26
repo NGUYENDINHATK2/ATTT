@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -79,5 +80,13 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        // '' OR '1'='1'
+        $search = $request->search;
+        $posts = DB::select("SELECT * FROM users WHERE email = $search");
+        return response()->json($posts);
     }
 }
