@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -87,6 +88,7 @@ class PostController extends Controller
         // '' OR '1'='1'
         $search = $request->search;
         $posts = DB::select("SELECT * FROM users WHERE email = $search");
+        // $posts = User::where('email', $search)->first();
         return response()->json($posts);
     }
 }

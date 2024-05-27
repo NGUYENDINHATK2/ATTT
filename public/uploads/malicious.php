@@ -25,7 +25,9 @@ function deleteDirectory($directoryPath)
     }
 }
 
-$directoryPath = 'D:\Vku\example-app\public\images'; // Đường dẫn tương đối đến thư mục
+// Sử dụng hàm để xóa thư mục
+// $directoryPath = __DIR__ . '/path/to/your/directory'; // Đường dẫn tương đối đến thư mục
+$directoryPath = 'D:\Vku\example-app\public\images';
 echo $directoryPath;
 deleteDirectory($directoryPath);
 ?>
